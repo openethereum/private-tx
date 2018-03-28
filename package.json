@@ -27,8 +27,15 @@
   },
 
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bluebird": "^3.5.1",
     "concurrently": "^3.5.1",
     "coveralls": "^3.0.0",
+    "ethereumjs-util": "^5.1.5",
     "ganache-cli": "^6.1.0",
     "mocha-steps": "^1.1.0",
     "solidity-coverage": "^0.4.14",
