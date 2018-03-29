@@ -23,7 +23,7 @@ contract('Private', function(accounts) {
     private: '0x323f25528bca4eac32e75590ec62a6674240468de6ae7633f580d727642d00a6',
     address: '0xc274fcaf830aa911f1b5a32c8af21c6ee7c3d264'
   };
-  
+
   describe("getValidators", () => {
     let privateContract;
 
