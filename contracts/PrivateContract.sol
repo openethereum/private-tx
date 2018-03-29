@@ -40,7 +40,11 @@ contract PrivateContract {
 		nonce = 1;
 	}
 
-	function getValidators() public constant returns (address[]) {
+	function getValidators()
+		public
+		constant
+		returns (address[])
+	{
 		return validators;
 	}
 
