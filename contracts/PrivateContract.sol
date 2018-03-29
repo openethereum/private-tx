@@ -1,10 +1,5 @@
 // Private Transactions State Storage
 //
-// This contract keeps track of a private transaction state (supposedly encrypted)
-// and allows its change only if all the Validators (from a static list, initialized in constructor)
-// have signed a new state (hashed together with a current nonce, for replay protection).
-//
-//
 // Copyright 2018 Parity Technologies Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +13,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+// This contract keeps track of a private transaction state (supposedly encrypted)
+// and allows its change only if all the Validators (from a static list, initialized in constructor)
+// have signed a new state (hashed together with a current nonce, for replay protection).
 
 pragma solidity ^0.4.18;
 
