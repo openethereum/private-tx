@@ -2,11 +2,9 @@
   "name": "private-tx",
   "version": "0.1.0",
   "description": "Companion contract for Parity's Private Transactions feature",
-
   "author": "Parity Technologies <admin@parity.io>",
   "homepage": "https://github.com/parity-contracts/private-tx",
   "license": "Apache-2.0",
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/parity-contracts/private-tx.git"
@@ -14,10 +12,8 @@
   "bugs": {
     "url": "https://github.com/parity-contracts/private-tx/issues"
   },
-
   "scripts": {
     "ci": "npx concurrently \"npm run solium\" \"npm run truffle-with-rpc\" \"npm run solidity-coverage\"",
-
     "ganache": "npx ganache-cli -p 8547",
     "solidity-coverage": "npx solidity-coverage",
     "solium": "npx solium --dir contracts/",
@@ -25,7 +21,6 @@
     "truffle": "npx truffle test",
     "truffle-with-rpc": "npx concurrently --success first --kill-others \"npm run ganache\" \"npm run truffle\""
   },
-
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
