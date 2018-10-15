@@ -27,7 +27,10 @@ contract PrivateContract {
 	bytes public code;
 	uint256 public nonce;
 	
-	event PrivateStateChanged();
+	event PrivateStateChanged(
+		address changesOriginator,
+		bytes originalTransactionHash
+	);
 
 	constructor(
 		address[] initialValidators,
@@ -75,6 +78,22 @@ contract PrivateContract {
 
 		state = newState;
 		nonce = nonce + 1;
-		emit PrivateStateChanged();
+	}
+	
+	function notifyChanges(
+		address changesOriginator,
+		bytes originalTransactionHash
+	)
+		public
+	{
+		emit PrivateStateChanged(changesOriginator, originalTransactionHash);
+	}
+	
+	function getVersion()
+		public
+		pure
+		returns (uint8)
+	{
+		return 2;
 	}
 }
