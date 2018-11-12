@@ -28,12 +28,12 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
     "bluebird": "^3.5.1",
-    "concurrently": "^3.5.1",
+    "concurrently": "^4.0.1",
     "coveralls": "^3.0.0",
-    "ethereumjs-util": "^5.1.5",
+    "ethereumjs-util": "^6.0.0",
     "ganache-cli": "^6.1.0",
     "mocha-steps": "^1.1.0",
-    "solidity-coverage": "^0.4.14",
+    "solidity-coverage": "^0.5.11",
     "solium": "^1.1.6",
     "truffle": "^4.1.3"
   }
