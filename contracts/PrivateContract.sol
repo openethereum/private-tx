@@ -26,8 +26,13 @@ contract PrivateContract {
 	bytes public state;
 	bytes public code;
 	uint256 public nonce;
+	
+	event PrivateStateChanged(
+		address changesOriginator,
+		bytes originalTransactionHash
+	);
 
-	function PrivateContract(
+	constructor(
 		address[] initialValidators,
 		bytes initialCode,
 		bytes initialState
@@ -42,7 +47,7 @@ contract PrivateContract {
 
 	function getValidators()
 		public
-		constant
+		view
 		returns (address[])
 	{
 		return validators;
@@ -56,7 +61,9 @@ contract PrivateContract {
 	)
 		public
 	{
-		var noncedStateHash = keccak256([keccak256(newState), bytes32(nonce)]);
+		bytes32 noncedStateHash = keccak256(
+			abi.encodePacked([keccak256(newState), bytes32(nonce)])
+		);
 
 		for (uint i = 0; i < validators.length; i++) {
 			assert(
@@ -71,5 +78,22 @@ contract PrivateContract {
 
 		state = newState;
 		nonce = nonce + 1;
+	}
+	
+	function notifyChanges(
+		address changesOriginator,
+		bytes originalTransactionHash
+	)
+		public
+	{
+		emit PrivateStateChanged(changesOriginator, originalTransactionHash);
+	}
+	
+	function getVersion()
+		public
+		pure
+		returns (uint8)
+	{
+		return 2;
 	}
 }
